@@ -1,5 +1,5 @@
 /*
-Nome do programa: Grenciador de notas
+Nome do programa: Gerenciador de notas
 descrição: Este programa recolhe as notas de um aluno e aplica a média ponderada a fim de chegar na nta final
 Autor(es):Arthur Mendes
 Data: 24/02/24
