@@ -1,6 +1,6 @@
 /*
-Nome do programa: Separador de pares e ímpares
-descrição: Este programa recolhe os números digitados e os separa em pares e ímpares
+Nome do programa: organizdor de vetor
+descrição: Este programa monta um vetor 4x4 e retira algumas informações dele
 Autor(es):Arthur Mendes
 Data: 29/02/24
 */
