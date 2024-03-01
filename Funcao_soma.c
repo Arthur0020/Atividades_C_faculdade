@@ -1,8 +1,9 @@
 /*
-Nome do programa:
-Descrição:
-Autor(es):
-Data:
+Nome do programa: Função de soma
+Descrição: Este programa vai solicitar dois números ao usuário e
+vai apresentar na tela o resultado da soma desses números usando uma função.
+Autor(es): Arhtur Mendes
+Data: 29/02/24
 */
 
 #include <stdio.h>
