@@ -12,87 +12,43 @@ int main()
     int i, j;
     int N = 4;
     int matriz [N][N];
+    int somads = 0, somap = 0, somai = 0, somaprim = 0;
+    float mediap = 0, mediad = 0;
+    int cont;
     
     for(i = 0; i < N; i++)
     {
         for(j = 0; j < N; j++)
         {
-            printf("Digite os elementos da matriz: ");
+            printf("Digite os elementos da matriz na posição [%d][%d]: ", i, j);
             scanf("%d", &matriz[i][j]);
         }
     printf("\n");  
     }
     
-    printf("Soma dos números da diagonal secundária: ");
+    
     for(i = 0; i < N; i++)
     {
-        int soma_diagonal = 0;
-        
-        for(i = 0; i < N; i++)
+        somaprim += matriz[i][j];
+        somads += matriz[i][(N-1)-i];
+        if(i % 2 == 0)
         {
-            int numero_atual = matriz[i][(N - 1) - 1];
-            soma_diagonal += numero_atual; 
+            for(j = 0; j < N; j++)
+            somap += matriz[i][j];
+            
+        cont++;    
         }
-        printf("%d \n", soma_diagonal);
-    }
-    
-   printf("\n");
-    
-    printf("Soma das linhas pares da matriz:\n");
-    for(i = 0; i <= 2; i+= 2)
-    {
-        int soma_linhas_pares = 0;
-        
-        for(j = 0; j < 4; j++)
+        else
         {
-             soma_linhas_pares += matriz[i][j];
+            for(j = 0; j < N; j++)
+            somai += matriz[i][j];
         }
-        printf("A soma da linha %d: %d \n", i, soma_linhas_pares);
     }
     
-    printf("\n");
+    mediap = somap / (cont*N);
+    mediad = (somaprim + somads)/(2*N);
     
-    printf("Soma das linhas ímpares da matriz:\n");
-    for(i = 1; i < 4; i += 2)
-    {
-        int soma_linhas_impares = 0;
-        
-        for(j = 0; j < 4; j++)
-        {
-             soma_linhas_impares += matriz[i][j];
-        }
-        printf("A soma da linha %d: %d \n", i, soma_linhas_impares);
-    }
-    
-    printf("\n");
-    
-    printf("Média das linhas pares da Matriz:\n");
-    for(i = 0; i <= 2; i+= 2)
-    {
-        int soma_linhas_pares = 0;
-        
-        for(j = 0; j < 4; j++)
-        {
-             soma_linhas_pares += matriz[i][j];
-        }
-        float media = (float)soma_linhas_pares / 4;
-        printf("A média da linha %d: %.2f \n", i, media);
-    }
-    
-    int soma_diagonal_1 = 0;
-    int soma_diagonal_2 = 0;
-    
-    for(i = 0; i < N; i ++)
-    {
-        soma_diagonal_1 += matriz[i][j] ;
-    }
-    printf("\nSoma da diagonal primaria: %d", soma_diagonal_1);
-    
-    for(i = 0; i < N; i ++)
-    {
-        soma_diagonal_2 += matriz[i][N - i - 1] ;
-    }
-    printf("\nSoma da diagonal secundária: %d", soma_diagonal_2);
+    printf("Soma da diagonal secundária: %d \n Soma dos valores das linhas pares: %d \n Soma dos valores das linhas impares: %d \n Media dos valores das linhas pares: %f \n Media dos valores das diagonais: %f", somads, somap, somai, mediap, mediad );
     
     return 0;
 }
